@@ -30,13 +30,12 @@ Thumbs.db
 *.pid
 *.started_at.txt
 *_runtime.txt
-data/output/*.json
-data/output/*.csv
-data/output/*.xlsx
+data/output/pipeline_job_*.stdout.log
+data/output/pipeline_job_*.stderr.log
+data/output/checkpoint_*.json
 data/output/*.log
 data/output/*.pid
 data/output/*.txt
-data/output/checkpoint_*.json
 
 # Node & Frontend
 node_modules/

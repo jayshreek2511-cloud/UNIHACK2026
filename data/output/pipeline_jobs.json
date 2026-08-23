@@ -1,0 +1,26 @@
+{
+  "78ce4b21043346de8f15c1ce173d92f8": {
+    "job_id": "78ce4b21043346de8f15c1ce173d92f8",
+    "status": "complete",
+    "pid": 18324,
+    "started_at": "2026-08-23T15:15:14.243210+00:00",
+    "input_file": "challenge_1000_manufacturer_variants.csv",
+    "input_rows": 1000,
+    "stdout_log": "data\\output\\pipeline_job_78ce4b21043346de8f15c1ce173d92f8.stdout.log",
+    "stderr_log": "data\\output\\pipeline_job_78ce4b21043346de8f15c1ce173d92f8.stderr.log",
+    "return_code": 0,
+    "finished_at": "2026-08-23T15:28:22.411856+00:00"
+  },
+  "9b39a828ff3c44b481b05a5a2e9b04cd": {
+    "job_id": "9b39a828ff3c44b481b05a5a2e9b04cd",
+    "status": "complete",
+    "pid": 4088,
+    "started_at": "2026-08-23T15:56:15.652012+00:00",
+    "input_file": "test_upload_batch2_40rows.csv",
+    "input_rows": 41,
+    "stdout_log": "data\\output\\pipeline_job_9b39a828ff3c44b481b05a5a2e9b04cd.stdout.log",
+    "stderr_log": "data\\output\\pipeline_job_9b39a828ff3c44b481b05a5a2e9b04cd.stderr.log",
+    "return_code": 0,
+    "finished_at": "2026-08-23T15:59:36.382567+00:00"
+  }
+}
