@@ -177,6 +177,17 @@ async def health():
     return {"status": "ok", "version": "1.0.0", "phase": 5}
 
 
+@app.get("/debug/paths")
+async def debug_paths():
+    return {
+        "project_root": str(PROJECT_ROOT),
+        "output_dir": str(OUTPUT_DIR),
+        "output_dir_exists": OUTPUT_DIR.exists(),
+        "files_in_output": [f.name for f in OUTPUT_DIR.iterdir()] if OUTPUT_DIR.exists() else [],
+        "enriched_exists": (OUTPUT_DIR / "dishwasher_enriched_full.json").exists(),
+    }
+
+
 @app.get("/api/stats")
 async def get_stats():
     """Pipeline-wide statistics derived from real execution output."""
