@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, KeyRound, Save, Webhook } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://unihack2026-production-1622.up.railway.app';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://unihack2026-production-2597.up.railway.app';
 
 export default function SettingsView() {
   const [apiKey, setApiKey] = useState('');

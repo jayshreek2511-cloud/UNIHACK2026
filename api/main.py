@@ -102,6 +102,7 @@ app.add_middleware(
         "http://127.0.0.1:8000",
         "https://unihack2026.vercel.app",
         "https://unihack2026-kappa.vercel.app",
+        "https://unihack2026-ggs29u9jp-jayshreek2511-clouds.projects.vercel.app",
         "*",
     ],
     allow_credentials=True,
