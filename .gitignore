@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Secrets & Local Config
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# IDE & OS
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+
+# Testing & Logs
+.pytest_cache/
+*.log
+*.pid
+*.started_at.txt
+*_runtime.txt
+data/output/*.json
+data/output/*.csv
+data/output/*.xlsx
+data/output/*.log
+data/output/*.pid
+data/output/*.txt
+data/output/checkpoint_*.json
+
+# Node & Frontend
+node_modules/
+.next/
+frontend/dist/
+frontend/node_modules/
+
+# Agents
+.agents/
+
