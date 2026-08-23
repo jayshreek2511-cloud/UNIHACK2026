@@ -180,12 +180,19 @@ async def health():
 
 @app.get("/debug/paths")
 async def debug_paths():
+    cwd = Path.cwd()
+    alt_output = cwd / "data" / "output"
     return {
         "project_root": str(PROJECT_ROOT),
         "output_dir": str(OUTPUT_DIR),
         "output_dir_exists": OUTPUT_DIR.exists(),
         "files_in_output": [f.name for f in OUTPUT_DIR.iterdir()] if OUTPUT_DIR.exists() else [],
         "enriched_exists": (OUTPUT_DIR / "dishwasher_enriched_full.json").exists(),
+        "cwd": str(cwd),
+        "alt_output_dir": str(alt_output),
+        "alt_output_exists": alt_output.exists(),
+        "alt_enriched_exists": (alt_output / "dishwasher_enriched_full.json").exists(),
+        "alt_files": [f.name for f in alt_output.iterdir()] if alt_output.exists() else [],
     }
 
 
