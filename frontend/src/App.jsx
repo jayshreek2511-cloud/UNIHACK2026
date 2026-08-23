@@ -77,7 +77,7 @@ export default function App() {
       {/* Sidebar Navigation */}
       <aside className="sidebar">
         <div className="brand-header">
-          <div className="brand-icon">UI</div>
+          <div className="brand-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="22" height="22" rx="5" fill="url(#tc-gradient)"/><path d="M6 7.5h10M6 11h10M6 14.5h6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/><defs><linearGradient id="tc-gradient" x1="0" y1="0" x2="22" y2="22"><stop stopColor="#06b6d4"/><stop offset="1" stopColor="#3b82f6"/></linearGradient></defs></svg></div>
           <div>
             <div className="brand-title">TrueCatalog</div>
             <span className="text-[10px] font-mono text-cyan-400 block uppercase">Product operations</span>
