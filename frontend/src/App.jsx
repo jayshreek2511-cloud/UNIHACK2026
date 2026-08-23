@@ -79,7 +79,7 @@ export default function App() {
         <div className="brand-header">
           <div className="brand-icon">UI</div>
           <div>
-            <div className="brand-title">Unilog Intelligence</div>
+            <div className="brand-title">TrueCatalog</div>
             <span className="text-[10px] font-mono text-cyan-400 block uppercase">Product operations</span>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function App() {
       <main className="main-content">
         <header className="top-bar">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold font-mono text-slate-400 uppercase">Product Intelligence</span>
+            <span className="text-xs font-bold font-mono text-slate-400 uppercase">Unilog Intelligence</span>
             <span className="text-slate-600">/</span>
             <span className="text-xs font-semibold text-cyan-400 capitalize">{activeTab === 'overview' ? 'Overview' : activeTab}</span>
           </div>
