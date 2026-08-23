@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Database, Filter, Sliders, Globe, FileText, ShieldCheck, Download, Upload, Play, CheckCircle2, ArrowRight, FileSpreadsheet } from 'lucide-react';
 
-const API_BASE = '';
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
 export default function PipelineView({ stats, onNavigate, onRefresh }) {
   const [running, setRunning] = useState(false);
