@@ -26,7 +26,11 @@ from pydantic import BaseModel
 logger = logging.getLogger("uvicorn.error")
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+# Railway may run from a different cwd; try both the module-relative path and cwd
+_cwd_output = Path.cwd() / "data" / "output"
 OUTPUT_DIR = PROJECT_ROOT / "data" / "output"
+if not OUTPUT_DIR.exists() and _cwd_output.exists():
+    OUTPUT_DIR = _cwd_output
 APPROVALS_FILE = OUTPUT_DIR / "approvals.json"
 PIPELINE_JOBS_FILE = OUTPUT_DIR / "pipeline_jobs.json"
 _pipeline_jobs: Dict[str, dict] = {}
@@ -126,7 +130,13 @@ def _save_approvals(approved_skus: set):
 def _load_enriched_records() -> List[dict]:
     path = OUTPUT_DIR / "dishwasher_enriched_full.json"
     if not path.exists():
-        raise HTTPException(status_code=404, detail="Enriched records file not found. Please run Phase 4 pipeline first.")
+        # Try relative to cwd (Railway may deploy from a different root)
+        alt_path = Path.cwd() / "data" / "output" / "dishwasher_enriched_full.json"
+        if alt_path.exists():
+            path = alt_path
+        else:
+            logger.warning("dishwasher_enriched_full.json not found at %s or %s — returning empty list", path, alt_path)
+            return []
     with open(path, "r", encoding="utf-8") as f:
         records = json.load(f)
 
@@ -152,7 +162,11 @@ def _load_enriched_records() -> List[dict]:
 def _load_review_queue() -> dict:
     path = OUTPUT_DIR / "review_queue.json"
     if not path.exists():
-        return {"summary": {"total_processed": 0, "complete_count": 0, "review_count": 0}, "review_queue": [], "complete": []}
+        alt_path = Path.cwd() / "data" / "output" / "review_queue.json"
+        if alt_path.exists():
+            path = alt_path
+        else:
+            return {"summary": {"total_processed": 0, "complete_count": 0, "review_count": 0}, "review_queue": [], "complete": []}
     with open(path, "r", encoding="utf-8") as f:
         rq = json.load(f)
 
