@@ -7,7 +7,7 @@ import RecordDetailView from './components/RecordDetailView';
 import SettingsView from './components/SettingsView';
 import OverviewView from './components/OverviewView';
 
-const API_BASE = import.meta.env.VITE_API_URL || '';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://unihack2026-production-1622.up.railway.app';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'pipeline' | 'catalog' | 'review' | 'detail' | 'settings'

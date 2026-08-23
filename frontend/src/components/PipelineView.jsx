@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Database, Filter, Sliders, Globe, FileText, ShieldCheck, Download, Upload, Play, CheckCircle2, ArrowRight, FileSpreadsheet } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_URL || '';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://unihack2026-production-1622.up.railway.app';
 
 export default function PipelineView({ stats, onNavigate, onRefresh }) {
   const [running, setRunning] = useState(false);
